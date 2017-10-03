@@ -15,7 +15,7 @@ function onError(error) {
 function restoreOptions() {
   browser.storage.local.get(["kinto_url", "kinto_bucket", "kinto_collection", "kinto_secret"]).then((result) => {
       document.querySelector("#kinto_url").value = result.kinto_url || "https://kinto.notmyidea.org/v1";
-      document.querySelector("#kinto_bucket").value = result.kinto_bucket || "notes";
+      document.querySelector("#kinto_bucket").value = result.kinto_bucket || "default";
       document.querySelector("#kinto_collection").value = result.kinto_collection || "notes";
       let randomString = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10);
       document.querySelector("#kinto_secret").value = result.kinto_secret || randomString;
